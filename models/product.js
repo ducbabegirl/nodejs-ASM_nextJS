@@ -10,12 +10,12 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
+    img: {
+        type: String,
+    },
     category: {
         type: ObjectId,
         ref: "Category"
-    },
-    image:{
-        type: String,
     }
-}, { timestamps: true});
+}, { timestamps: true });
 export default mongoose.model('Product', productSchema);

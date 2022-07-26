@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import productRoute from '../routes/product';
 import categoryRoute from '../routes/category';
 import authRoute from '../routes/auth';
+import cartRouter from '../routes/cart';
 const app = express();
 
 // middleware
@@ -17,8 +18,11 @@ app.use(express.json())
 app.use("/api",productRoute);
 app.use("/api",categoryRoute);
 app.use("/api",authRoute);
+app.use("/api", cartRouter);
+
+
 // connnect database
-mongoose.connect('mongodb://localhost:27017/we16309')
+mongoose.connect('mongodb://localhost:27017/ASMnextJS')
     .then(() => console.log("Kết nối db thành công"))
     .catch((error) => console.log(error));
     
