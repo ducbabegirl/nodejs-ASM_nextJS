@@ -1,22 +1,12 @@
 import mongoose, { Schema, ObjectId } from "mongoose";
-const productSchema = new Schema({
+const bannerSchema = new Schema({
     name: {
         type: String,
         minLength: 5,
         required: true,
         unique: true
     },
-    price: {
-        type: Number,
-        required: true
-    },
     img: {
-        type: String,
-    },
-    size: {
-        type: String,
-    },
-    desc : {
         type: String,
     },
     category: {
@@ -24,4 +14,4 @@ const productSchema = new Schema({
         ref: "Category"
     }
 }, { timestamps: true });
-export default mongoose.model('Product', productSchema);
+export default mongoose.model('Banner', bannerSchema);
