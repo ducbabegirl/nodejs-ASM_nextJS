@@ -8,8 +8,8 @@ const router = Router();
 router.get('/banners', checkAuth, list);
 router.get('/banners/:id', checkAuth, read);
 router.post('/banners/', create);
-router.delete('/banners/:id', requireSignin, remove);
-router.put("/banners/:id", requireSignin,checkAuth,update);
+router.delete('/banners/:id', remove);
+router.put("/banners/:id",checkAuth,update);
 
 
 export default router;
