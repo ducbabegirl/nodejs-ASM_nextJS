@@ -12,6 +12,12 @@ const productSchema = new Schema({
     img: {
         type: String,
     },
+    size: {
+        type: String,
+    },
+    desc : {
+        type: String,
+    },
     category: {
         type: ObjectId,
         ref: "Category"

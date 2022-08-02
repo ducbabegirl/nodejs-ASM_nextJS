@@ -7,6 +7,7 @@ import productRoute from '../routes/product';
 import categoryRoute from '../routes/category';
 import authRoute from '../routes/auth';
 import cartRouter from '../routes/cart';
+import bannerRouter from '../routes/banner';
 const app = express();
 
 // middleware
@@ -19,6 +20,7 @@ app.use("/api",productRoute);
 app.use("/api",categoryRoute);
 app.use("/api",authRoute);
 app.use("/api", cartRouter);
+app.use("/api", bannerRouter);
 
 
 // connnect database

@@ -8,8 +8,11 @@ const router = Router();
 router.get('/products', checkAuth, list);
 router.get('/products/:id', checkAuth, read);
 router.post('/products/', create);
+
 router.delete('/products/:id', remove);
 router.put("/products/:id",checkAuth,update);
+
+
 
 router.param("userId", userById);
 
