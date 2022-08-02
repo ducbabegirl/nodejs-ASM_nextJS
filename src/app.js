@@ -9,6 +9,7 @@ import authRoute from '../routes/auth';
 import cartRouter from '../routes/cart';
 import bannerRouter from '../routes/banner';
 import galleryRouter from '../routes/gallery';
+import tittleRouter from '../routes/tittle'
 const app = express();
 
 // middleware
@@ -23,10 +24,12 @@ app.use("/api",authRoute);
 app.use("/api", cartRouter);
 app.use("/api", bannerRouter);
 app.use("/api", galleryRouter);
+app.use("/api", tittleRouter);
+
 
 
 // connnect database
-mongoose.connect('mongodb://localhost:27017/ASMnextJS')
+mongoose.connect('mongodb://127.0.0.1:27017/ASMnextJS')
     .then(() => console.log("Kết nối db thành công"))
     .catch((error) => console.log(error));
     
