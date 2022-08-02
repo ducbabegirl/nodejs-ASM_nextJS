@@ -8,10 +8,6 @@ const bannerSchema = new Schema({
     },
     img: {
         type: String,
-    },
-    category: {
-        type: ObjectId,
-        ref: "Category"
     }
 }, { timestamps: true });
 export default mongoose.model('Banner', bannerSchema);

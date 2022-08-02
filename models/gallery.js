@@ -8,10 +8,6 @@ const gallerySchema = new Schema({
     },
     img: {
         type: String,
-    },
-    category: {
-        type: ObjectId,
-        ref: "Category"
     }
 }, { timestamps: true });
 export default mongoose.model('Gallery', gallerySchema);
