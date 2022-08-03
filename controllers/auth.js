@@ -54,10 +54,6 @@ export const signin = async (req, res) => {
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a8f2735f9fb9687010ab766106143d2f6a0c93c1
 export const list = async (req, res) => { 
     try {
         const users = await User.find().sort({createAt: -1});
@@ -67,8 +63,4 @@ export const list = async (req, res) => {
             message: "Lỗi không tìm được sản phẩm"
         })
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a8f2735f9fb9687010ab766106143d2f6a0c93c1
