@@ -23,7 +23,6 @@ export const signup = async (req, res) => {
         
     }
 }
-
 export const signin = async (req, res) => {
     const { email, password} = req.body;
     try {
