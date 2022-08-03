@@ -13,7 +13,6 @@ router.delete('/products/:id', remove);
 router.put("/products/:id",checkAuth,update);
 
 
-
 router.param("userId", userById);
 
 export default router;
