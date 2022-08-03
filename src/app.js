@@ -10,6 +10,7 @@ import cartRouter from '../routes/cart';
 import bannerRouter from '../routes/banner';
 import galleryRouter from '../routes/gallery';
 import tittleRouter from '../routes/tittle'
+import storyRouter from '../routes/story'
 const app = express();
 
 // middleware
@@ -25,6 +26,7 @@ app.use("/api", cartRouter);
 app.use("/api", bannerRouter);
 app.use("/api", galleryRouter);
 app.use("/api", tittleRouter);
+app.use("/api", storyRouter);
 
 
 

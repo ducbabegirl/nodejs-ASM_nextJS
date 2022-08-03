@@ -8,14 +8,16 @@ const StorySchema = new Schema({
     },
     desc: {
         type: String,
-        
+        minLength: 5,
+        required: true,
+        unique: true
     },
-    price: {
-        type: Number,
-        required: true
-    },
+    
     img: {
         type: String,
+    },
+    times: {
+        type: Number,
     }
 }, { timestamps: true });
 export default mongoose.model('Story', StorySchema);
