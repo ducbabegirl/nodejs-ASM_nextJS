@@ -1,0 +1,21 @@
+import mongoose, { Schema, ObjectId } from "mongoose";
+const StorySchema = new Schema({
+    name: {
+        type: String,
+        minLength: 5,
+        required: true,
+        unique: true
+    },
+    desc: {
+        type: String,
+        
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    img: {
+        type: String,
+    }
+}, { timestamps: true });
+export default mongoose.model('Story', StorySchema);
