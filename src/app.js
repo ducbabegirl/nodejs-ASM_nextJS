@@ -9,6 +9,7 @@ import authRoute from '../routes/auth';
 import cartRouter from '../routes/cart';
 import bannerRouter from '../routes/banner';
 import galleryRouter from '../routes/gallery';
+import aboutUsRoute from '../routes/aboutUs'
 const app = express();
 
 // middleware
@@ -23,6 +24,7 @@ app.use("/api",authRoute);
 app.use("/api", cartRouter);
 app.use("/api", bannerRouter);
 app.use("/api", galleryRouter);
+app.use("/api",aboutUsRoute);
 
 
 // connnect database
