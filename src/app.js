@@ -11,6 +11,7 @@ import bannerRouter from '../routes/banner';
 import galleryRouter from '../routes/gallery';
 import tittleRouter from '../routes/tittle'
 import storyRouter from '../routes/story'
+import aboutUsRoute from '../routes/aboutUs'
 const app = express();
 
 // middleware
@@ -27,6 +28,7 @@ app.use("/api", bannerRouter);
 app.use("/api", galleryRouter);
 app.use("/api", tittleRouter);
 app.use("/api", storyRouter);
+app.use("/api",aboutUsRoute);
 
 
 

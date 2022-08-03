@@ -1,5 +1,5 @@
 import mongoose, { Schema, ObjectId } from "mongoose";
-const bannerSchema = new Schema({
+const aboutUsSchema = new Schema({
     name: {
         type: String,
         minLength: 5,
@@ -7,6 +7,9 @@ const bannerSchema = new Schema({
     },
     img: {
         type: String,
+    },
+    description:{
+        type: String,
     }
 }, { timestamps: true });
-export default mongoose.model('Banner', bannerSchema);
+export default mongoose.model('AboutUs', aboutUsSchema);
