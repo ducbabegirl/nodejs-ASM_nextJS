@@ -53,3 +53,14 @@ export const signin = async (req, res) => {
         
     }
 }
+
+export const list = async (req, res) => { 
+    try {
+        const users = await User.find().sort({createAt: -1});
+        res.json(users);
+    } catch (error) {
+        res.status(400).json({
+            message: "Lỗi không tìm được sản phẩm"
+        })
+    }
+}
