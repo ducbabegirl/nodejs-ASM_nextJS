@@ -6,21 +6,33 @@ const userSchema = new Schema({
         required: true,
         maxLength: 30
     },
+    lastName: {
+        type: String,
+        required: true,
+        maxLength: 30
+    },
     email: {
         type: String,
         required: true
     },
-    salt: {
-        type: String
+    phoneNumber: {
+        type: Number,
+        required: true,
+    },
+    date : {
+        type: String,
     },
     password: {
         type: String,
         required: true
     },
-    role: {
-        type: Number,
-        default: 0
-    }
+    password2: {
+        type: String,
+    },
+    description: {
+        type: String,
+        required: true
+    },
 }, { timestamps: true});
 
 userSchema.methods = {
