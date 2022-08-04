@@ -15,6 +15,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    salt: {
+        type: String
+    },
     phoneNumber: {
         type: Number,
         required: true,
@@ -26,13 +29,13 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    password2: {
-        type: String,
-    },
     description: {
         type: String,
-        required: true
     },
+    role: {
+        type: Number,
+        default: 0
+    }
 }, { timestamps: true});
 
 userSchema.methods = {

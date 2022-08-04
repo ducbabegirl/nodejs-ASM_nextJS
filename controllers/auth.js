@@ -3,42 +3,39 @@ import jwt from 'jsonwebtoken';
 
 
 export const signup = async (req, res) => {
-    const { email, name, password} = req.body
+    const { email, name, lastName, phoneNumber, password, date ,description } = req.body
     try {
-        const existUser = await User.findOne({email}).exec();
-        if(existUser){
+        const existUser = await User.findOne({ email }).exec();
+        if (existUser) {
             res.json({
                 message: "Email đã tồn tại"
             })
         };
-        const user = await new User({email, name, password}).save();
+        const user = await new User({ email, name, lastName, phoneNumber, password, date, description }).save();
         res.json({
-            user: {
-                _id: user._id,
-                email: user.email,
-                name: user.name
-            }
+            user
         })
     } catch (error) {
-        
+
     }
 }
+
 export const signin = async (req, res) => {
-    const { email, password} = req.body;
+    const { email, password } = req.body;
     try {
-        const user = await User.findOne({email}).exec();
-        if(!user){
+        const user = await User.findOne({ email }).exec();
+        if (!user) {
             res.status(400).json({
                 message: "email không tồn tại"
             })
         }
-        if(!user.authenticate(password)){
+        if (!user.authenticate(password)) {
             res.status(400).json({
                 message: "Sai mật khẩu"
             })
         }
 
-        const token = jwt.sign({_id: user._id }, "123456", { expiresIn: 60 * 60})
+        const token = jwt.sign({ _id: user._id }, "123456", { expiresIn: 60 * 60 })
 
         res.json({
             token,
@@ -50,13 +47,13 @@ export const signin = async (req, res) => {
             }
         })
     } catch (error) {
-        
+
     }
 }
 
-export const list = async (req, res) => { 
+export const list = async (req, res) => {
     try {
-        const users = await User.find().sort({createAt: -1});
+        const users = await User.find().sort({ createAt: -1 });
         res.json(users);
     } catch (error) {
         res.status(400).json({
