@@ -61,3 +61,31 @@ export const list = async (req, res) => {
         })
     }
 }
+
+export const remove = async (req, res) => {
+    const condition = { _id: req.params.id}
+    try {
+        const user = await User.findOneAndDelete(condition);
+        res.json({
+            message: "Đã xóa thành công",
+            data: user
+        });
+    } catch (error) {
+        res.status(400).json({
+            message: "Lỗi không tìm được sản phẩm"
+        })
+    }
+}
+export const update = async (req, res) => {
+    const condition = { _id: req.params.id};
+    const doc = req.body;
+    const option = { new: true};
+    try {
+        const user = await User.findOneAndUpdate(condition, doc, option);
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({
+            message: "Lỗi không tìm được sản phẩm"
+        })
+    }
+}
