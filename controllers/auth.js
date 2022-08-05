@@ -89,3 +89,15 @@ export const update = async (req, res) => {
         })
     }
 }
+
+export const read = async (req, res) => {
+    const filter = { _id: req.params.id}
+    try {
+        const user = await User.findOne(filter);
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({
+            message: "Lỗi không tìm được sản phẩm"
+        })
+    }
+}
